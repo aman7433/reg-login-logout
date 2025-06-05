@@ -6,8 +6,18 @@
     <title>user login</title>
 </head>
 <body>
+    <style>
+        .erc{
+            color: rgb(240, 56, 56);
+        }
+    </style>
     <form action="" method="post" novalidate>
         {% csrf_token %}
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors  %}
+                    <p class="erc">{{error}}</p>
+                {% endfor %}
+            {% endif %}     
         {% for fm in form %}
             {{fm.label_tag}}{{fm}}{{fm.errors}} <br><br> 
         {% endfor %}

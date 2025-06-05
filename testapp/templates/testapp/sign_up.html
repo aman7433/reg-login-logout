@@ -18,7 +18,8 @@
         {% for message in messages %}
             <small {{message.tags}} class="{{message.tags}}">
                 {{message}}</small>
-        {% endfor %}
+        {% endfor %}                  
     {% endif %}
+    <a href="{% url 'login' %}">Login</a>
 </body>
 </html>
